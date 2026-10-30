@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Xuandong Chen | Economics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Xuandong Chen, Ph.D. candidate in Economics at Princeton University. Research in economic theory, information acquisition, and information design.">
+<style>
+			/*Define global style variables*/
+			:root {
+				--baseColor: #E77500;
+				--borderColor: #C3C3C3;
+				--headerMargin: 150px;
+				--basicPadding: 20px;
+				/* Controls animations on modern browsers*/
+				interpolate-size: allow-keywords;
+				}
+
+			html { scroll-behavior: smooth; }
+			
+			/*Define body styles*/
+			body{
+				font-size: 1em;
+				font-family: "futura-pt", Helvetica, "Trebuchet MS", Verdana, Sans-Serif;
+				color: #595959;
+				box-sizing: border-box;
+			}
+			
+			nav{
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				margin: 0 auto;
+			}
+			
+			nav.top-menu ul{
+				display: flex;
+				gap: 10px;
+				margin-block-start: 0;
+				margin-block-end: 0;
+				padding-inline-start: 0;
+
+			}
+			
+			nav.top-menu li{
+				list-style-type: none;
+				padding-inline-start: 0;
+			}
+			
+			nav.top-menu ul a{
+				flex: 1;
+			}
+						
+			main{
+				margin: var(--headerMargin) 0 0 0;
+			}
+			/*Define how anchor tags (links) will look*/
+			a{
+				text-decoration: none;
+				color: var(--baseColor);
+			}
+
+			/*Affix the page header at top of page*/
+			header{
+				position: fixed;
+				top: 0;
+				left: 0; 
+				right: 0;
+				z-index: 100;
+				background-color: white;
+				width: 100%;					
+				height: var(--headerMargin);
+				opacity:.98;
+			}        		
+			
+			/*Center text in h tags*/
+			h1, nav{
+				text-align: center;
+			}
+						
+			.about{
+				border: 1px solid var(--borderColor);
+				padding: 20px 0;
+				margin: 20px 0;
+				border-left: 0;
+				border-right: 0;
+			}
+			
+			/*Highlight job market paper label*/
+			.jmp{
+				font-weight: bold;
+				color: black;
+			}
+			
+			section{
+				padding: 10px;
+				scroll-margin-top: var(--headerMargin);
+			}
+			
+			/*Alternate background color on each page*/
+			section:nth-child(even){
+				background-color: #F8F8F8;
+			}
+			
+			/*Make the profile image occupy max 100 percent of its enclosing container*/
+			section#home img.profile{
+				/*Uncomment below to make the profile image circular*/
+				/* clip-path: circle(); */
+				max-width: 100%;
+			}
+			
+			section aside.section-title{
+				text-align: center;
+			}
+			
+						
+			/*Style paper container*/
+			article.paper{
+				border-bottom: 1px solid var(--borderColor);
+				padding: 0 0 var(--basicPadding) 0;
+			}
+
+			/*Style co-authors element*/
+			article.paper .coauthors{
+				margin: 0;
+				text-indent: 20px
+			}
+			
+			/*Style details tag, used for abstracts*/
+			details{
+				margin: 20px 0;
+			}
+			
+			/*Format abstract details label to look like a link*/				
+			details summary{
+				color: var(--baseColor);
+				cursor: pointer;
+			}
+			
+			summary::marker{
+				font-size: .75rem;
+			}
+
+			/*Format abstract text, including animating text reveal*/
+			details::details-content{
+				font-size: .9rem;
+				block-size: 0;
+				overflow: hidden;
+				transition: 
+					block-size 1s,
+					content-visibility 1s;
+					
+				transition-behavior: allow-discrete;
+			}
+			
+			details[open]::details-content{
+				block-size: auto;
+			}
+									
+			/*Style journal name*/
+			.journal{
+				font-style: italic;
+			}
+
+			/*Override styles on larger screens*/
+			@media screen and (min-width: 800px){
+				/*Use grid on larger screens*/
+												
+				/*Sections occupy 99 percent of viewport height, thus appear like a full page*/
+				section{
+					display: grid;
+					grid-template-columns: minmax(240px, 400px) minmax(0, 1fr);
+					gap: 30px;
+					min-height: 99vh;
+					box-sizing: border-box;
+				}
+				
+				section aside.section-title *{
+					position: sticky;
+					top: calc(var(--headerMargin) + 20px);
+				}
+			}
+			
+		  /* Honor reduced motion preference for abstract text reveal*/
+		  @media (prefers-reduced-motion: reduce){
+				details::details-content{ transition:none; }
+		  }
+		
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; line-height: 1.6; }
+main { scroll-margin-top: var(--headerMargin); }
+header { border-bottom: 1px solid #eee; }
+header h1 { margin: 20px 10px 8px; color: #4b4b4b; font-size: 2rem; line-height: 1.25; }
+nav.top-menu { flex-wrap: wrap; gap: 24px; }
+a:hover { text-decoration: underline; }
+a:focus-visible, summary:focus-visible { outline: 2px solid #E77500; outline-offset: 5px; }
+section { padding: 32px max(20px, calc((100vw - 1200px) / 2)); }
+section .section-content { min-width: 0; max-width: 760px; }
+section#home img.profile { position: static; display: block; width: 100%; max-width: 340px; height: auto; margin: 0 auto 24px; }
+.address, .paper-title { overflow-wrap: anywhere; }
+.affiliation { margin-top: 0; }
+h2, h3 { color: #4b4b4b; }
+h2 { margin-top: 0; }
+.paper-title { color: #4b4b4b; font-size: 1.17em; margin-bottom: 8px; }
+.research-group + .research-group { margin-top: 40px; }
+.research-group-title { font-size: 1.25rem; margin: 0 0 24px; }
+.research-group .paper-title { margin-top: 0; }
+.research-group > .paper:last-child { border-bottom: 0; padding-bottom: 0; margin-bottom: 0; }
+.research-group .jmp { font-size: .9rem; margin: 0 0 8px; color: #595959; }
+.paper-title a { color: var(--baseColor); }
+.jmp { margin-top: 20px; }
+article.paper { margin-bottom: 28px; }
+.skip-link { position: fixed; top: -100px; left: 12px; z-index: 200; padding: 8px 14px; background: white; }
+.skip-link:focus { top: 10px; }
+footer { text-align: center; padding: 24px; font-size: .8rem; border-top: 1px solid #e6e6e6; }
+@media screen and (max-width: 799px) { :root { --headerMargin: 145px; } section .section-content { margin: auto; } section#home img.profile { max-width: 280px; } section#research .section-title { text-align: left; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header>
+<h1>Xuandong Chen</h1>
+<nav class="top-menu" aria-label="Main navigation">
+<a href="#home">Home</a><a href="#research">Research</a><a href="https://www.dropbox.com/scl/fi/jd756cdrwpk1ede4jh2cw/CV_Xuandong-Chen.pdf?rlkey=k3k2wmad1syrnbabw0g5cezrq&amp;st=9jerv1rj&amp;dl=0" target="_blank" rel="noopener">CV</a>
+</nav>
+</header>
+<main id="main" tabindex="-1">
+<section id="home" aria-labelledby="profile-name">
+<aside class="section-title">
+<img class="profile" src="portrait.png" alt="Xuandong Chen" width="1188" height="1078" decoding="async">
+</aside>
+<div class="section-content">
+<hgroup>
+<h2 id="profile-name">Xuandong Chen</h2>
+<p class="affiliation">Ph.D. Candidate in Economics<br>Princeton University</p>
+</hgroup>
+<div>
+<h3>Contact</h3>
+<p class="address">Department of Economics<br>Princeton University</p>
+<p><a href="mailto:xc7921@princeton.edu">xc7921@princeton.edu</a></p>
+</div>
+<div class="about">
+<p>I am on the job market during the 2026–2027 academic year.</p>
+<p>I am a Ph.D. candidate in Economics at Princeton University. My research is in economic theory, with a focus on information acquisition and design.</p>
+</div>
+<article class="paper" aria-labelledby="home-jmp-title">
+<p class="jmp">Job market paper</p>
+<h3 class="paper-title" id="home-jmp-title"><a href="https://www.dropbox.com/scl/fi/crvjfp50psl3klejz391m/JMP-Draft.pdf?rlkey=muga5si9xi1xmyx01wagnu3ic&amp;st=jgdboxl7&amp;dl=0" target="_blank" rel="noopener">Hidden Information and Worse Discrimination</a></h3>
+<details open>
+<summary>Abstract</summary>
+<p class="abstract-text">How should regulators design employers’ information about potential employees to balance efficiency and fairness within the firm? I consider a model in which each candidate is characterized by multiple attributes. Some attributes are potentially protected, like criminal history, while some are less sensitive, like education. Discrimination along each attribute is the difference in the attribute’s average value between hired and rejected applicants. I show that banning the observation of a protected attribute can backfire and exacerbate discrimination on the unobserved attribute, as well as others. I relate these findings to Agan and Starr (2018), who document a widening racial gap in callbacks after employers removed criminal-history questions. Then, I allow the regulator to design more general information policies rather than simply banning attributes. I show that every optimal policy induces the firm to hire exactly half of applicants. Moreover, optimal disclosure can be based on a scalar index summarizing applicants’ attributes. Hiring probabilities can increase with this index yet be lower for an otherwise identical applicant with more of an attribute the firm values. Alternatively, applicants with the highest index values and some with lower values can be guaranteed to be hired, while applicants whose index values fall within an intermediate range are rejected with certainty.</p>
+</details>
+</article>
+</div>
+</section>
+<section id="research" aria-labelledby="research-heading">
+<aside class="section-title"><h2 id="research-heading">Research</h2></aside>
+<div class="section-content">
+<div class="research-group" role="group" aria-labelledby="working-papers-heading">
+<h3 class="research-group-title" id="working-papers-heading">Working papers</h3>
+<article class="paper" aria-labelledby="research-jmp-title">
+<p class="jmp">Job market paper</p>
+<h4 class="paper-title" id="research-jmp-title"><a href="https://www.dropbox.com/scl/fi/crvjfp50psl3klejz391m/JMP-Draft.pdf?rlkey=muga5si9xi1xmyx01wagnu3ic&amp;st=jgdboxl7&amp;dl=0" target="_blank" rel="noopener">Hidden Information and Worse Discrimination</a></h4>
+<details>
+<summary>Abstract</summary>
+<p class="abstract-text">How should regulators design employers’ information about potential employees to balance efficiency and fairness within the firm? I consider a model in which each candidate is characterized by multiple attributes. Some attributes are potentially protected, like criminal history, while some are less sensitive, like education. Discrimination along each attribute is the difference in the attribute’s average value between hired and rejected applicants. I show that banning the observation of a protected attribute can backfire and exacerbate discrimination on the unobserved attribute, as well as others. I relate these findings to Agan and Starr (2018), who document a widening racial gap in callbacks after employers removed criminal-history questions. Then, I allow the regulator to design more general information policies rather than simply banning attributes. I show that every optimal policy induces the firm to hire exactly half of applicants. Moreover, optimal disclosure can be based on a scalar index summarizing applicants’ attributes. Hiring probabilities can increase with this index yet be lower for an otherwise identical applicant with more of an attribute the firm values. Alternatively, applicants with the highest index values and some with lower values can be guaranteed to be hired, while applicants whose index values fall within an intermediate range are rejected with certainty.</p>
+</details>
+</article>
+<article class="paper" aria-labelledby="belief-validation-title">
+<h4 class="paper-title" id="belief-validation-title"><a href="https://www.dropbox.com/scl/fi/amhgybb1i9ybwzvhyj4j9/BV-Draft.pdf?rlkey=ezi10ipw0ew4nwiu8oyk77hqh&amp;st=6gxrdw69&amp;dl=0" target="_blank" rel="noopener">Belief Validation: From Blackwell to Lehmann</a></h4>
+<details>
+<summary>Abstract</summary>
+<p class="abstract-text">Can two agents, Anne and Bob, agree on which experiment weakly reduces their expected disagreement when different decision problems favor different experiments? I extend the information-validates-the-prior (IVP) theorem of Kartik et al. (2021) from Blackwell informativeness to Lehmann accuracy. Under familiar ordering requirements, Lehmann accuracy preserves the separation of posterior beliefs across low- and high-signal groups that underlies IVP. For low-signal groups of equal probability under Bob’s prior, greater accuracy lowers his average posterior mean and makes these groups more likely under Anne’s prior. For high-signal groups of equal probability under Anne’s prior, greater accuracy raises her average posterior mean and makes these groups more likely under Bob’s prior. Besides, under each agent’s own prior, the posterior mean averages to the prior mean. As a result, both agents expect a weakly smaller gap between their posterior means, even when the experiments cannot be ranked by their usefulness across all decision problems.</p>
+</details>
+</article>
+</div>
+<div class="research-group" role="group" aria-labelledby="work-in-progress-heading">
+<h3 class="research-group-title" id="work-in-progress-heading">Work in progress</h3>
+<article class="paper" aria-labelledby="bargaining-title">
+<h4 class="paper-title" id="bargaining-title">Commitment Beliefs and Bargaining Power</h4>
+<details>
+<summary>Abstract</summary>
+<p class="abstract-text">How do beliefs about what an opponent might insist on affect bargaining power when commitment becomes unlikely? I study continuous-time reputational bargaining in which the probability of commitment vanishes while its distribution across demands can change. A more credible demand encourages the opponent to concede, while a larger demand makes waiting more attractive. I show how this trade-off determines the shares each player can secure, accounting for the information conveyed by strategic demand choice. These guarantees bound payoffs and the surplus lost through delay in every equilibrium. For all but countably many relative discount rates, they exhaust the surplus, yielding common limiting expected payoffs and vanishing delay.</p>
+</details>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer>Xuandong Chen · Princeton University</footer>
+</body>
+</html>
